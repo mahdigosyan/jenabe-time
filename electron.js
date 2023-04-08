@@ -158,3 +158,18 @@ function menuSetup() {
               }
             },
             {
+              label: "Every hour",
+              type: "radio",
+              checked: store.get("reminder") === "hour",
+              click: e => {
+                if (e.checked) {
+                  mainWindow.reminderNotification = "hour";
+                  store.set("reminder", "hour");
+                }
+              }
+            }
+          ]
+        },
+        {
+            label: "Show example notification",
+          click: e => {
