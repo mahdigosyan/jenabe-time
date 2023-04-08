@@ -14,4 +14,4 @@ You can check off any task or project you have finished and enjoy the completion
 -
 3-It helps you a lot in planning your work and makes you avoid procrastination and finish your plans on time.
 -
-<b?>In short, if you want to have a regular plan for your personal goal, this project can help you a lot</b?
+<b?>In short, if you want to have a regular plan for your personal goal, this project can help you a lot</b>
