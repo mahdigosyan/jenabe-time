@@ -173,3 +173,17 @@ function menuSetup() {
         {
             label: "Show example notification",
           click: e => {
+            let exNotification = new Notification({
+              title: "todometer reminder!",
+              body: "Here's an example jenabe time notification!"
+            });
+            exNotification.show();
+          }
+        }
+      ]
+    }
+  ];
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu);
+}
+
