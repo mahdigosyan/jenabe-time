@@ -27,4 +27,17 @@ global.notificationSettings = {
   }; // temp object while app loads
   let willQuit = false;
 
-  
+
+function createWindow() {
+    mainWindow = new BrowserWindow({
+      width: 800,
+      minWidth: 320,
+      height: 600,
+      fullscreenable: true,
+      backgroundColor: "#403F4D",
+      icon: path.join(__dirname, ""),
+      webPreferences: {
+        nodeIntegration: true
+      }
+    });
+    
