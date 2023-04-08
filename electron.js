@@ -20,4 +20,11 @@ global.notificationSettings = {
     reminderNotification: store.get("reminder") || "hour"
   };
 
+  let mainWindow = {
+    show: () => {
+      console.log("show");
+    }
+  }; // temp object while app loads
+  let willQuit = false;
+
   
