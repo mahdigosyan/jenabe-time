@@ -49,3 +49,22 @@ function createWindow() {
   );
 }
 
+function menuSetup() {
+    const menuTemplate = [
+      {
+        label: "jenabetime",
+        submenu: [
+          {
+            label: "About",
+            click: () => {
+              dialog.showMessageBox(mainWindow, {
+                type: "info",
+                title: "About",
+                message: "jenabe time is built by @mahdigosyan",
+                detail:
+                  "You can find her on GitHub @mahdigosyan and Twitter as @mrbackdev.",
+                icon: path.join(__dirname, "assets/png/64x64.png")
+              });
+            }
+          },
+          {
