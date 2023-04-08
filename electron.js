@@ -187,3 +187,23 @@ function menuSetup() {
   Menu.setApplicationMenu(menu);
 }
 
+app.on("ready", () => {
+    createWindow();
+    menuSetup();
+  
+    powerMonitor.on("resume", () => {
+      mainWindow.reload();
+    });
+    mainWindow.on("close", e => {
+        if (willQuit || process.platform === "win32") {
+          mainWindow = null;
+          app.quit();
+        } else {
+          e.preventDefault();
+          mainWindow.hide();
+        }
+      });
+    });
+    
+    app.on("activate", () => mainWindow.show());
+    app.on("before-quit", () => (willQuit = true));
