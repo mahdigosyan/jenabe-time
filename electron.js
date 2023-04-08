@@ -68,3 +68,21 @@ function menuSetup() {
             }
           },
           {
+            label: "Contribute (v" + version + ")",
+            click: () => {
+              shell.openExternal("https://github.com/mahdigosyan/jenabe-time");
+            }
+          },
+          {
+            type: "separator"
+          },
+          {
+            label: "Quit",
+            accelerator: "CommandOrControl+Q",
+            click: () => {
+              app.quit();
+            }
+          }
+        ]
+      },
+      {
