@@ -100,3 +100,61 @@ function menuSetup() {
       {
         label: "View",
         submenu: [
+            {
+                type: "separator"
+              },
+              { role: "reload" },
+              { role: "togglefullscreen" },
+              { role: "minimize" },
+              { role: "close" }
+            ]
+          },
+          {
+            label: "Notifications",
+      submenu: [
+        {
+          label: "Enable reset notification",
+          type: "checkbox",
+          checked: store.get("reset"),
+          click: e => {
+            global.notificationSettings.resetNotification = e.checked;
+            store.set("reset", e.checked);
+          }
+        },
+        {
+          label: "Reminder notifications",
+          submenu: [
+            {
+              label: "Never",
+              type: "radio",
+              checked: store.get("reminder") === "never",
+              click: e => {
+                if (e.checked) {
+                  global.notificationSettings.reminderNotification = "never";
+                  store.set("reminder", "never");
+                }
+              }
+            },
+            {
+                label: "Every 15 minutes",
+              type: "radio",
+              checked: store.get("reminder") === "quarterhour",
+              click: e => {
+                if (e.checked) {
+                  global.notificationSettings.reminderNotification = "quarterhour";
+                  store.set("reminder", "quarterhour");
+                }
+              }
+            },
+            {
+              label: "Every 30 minutes",
+              type: "radio",
+              checked: store.get("reminder") === "halfhour",
+              click: e => {
+                if (e.checked) {
+                  global.notificationSettings.reminderNotification = "halfhour";
+                  store.set("reminder", "halfhour");
+                }
+              }
+            },
+            {
