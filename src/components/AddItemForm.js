@@ -22,4 +22,13 @@ function AddItemForm() {
       inputRef.current.value = "";
       inputRef.current.focus();
     }
+    return (
+        <form className={styles.form} onSubmit={addItem}>
+          <input ref={inputRef} placeholder="Add new item" autoFocus />
+          <button type="submit" />
+        </form>
+      );
+    }
+    
+    export default AddItemForm;
     
