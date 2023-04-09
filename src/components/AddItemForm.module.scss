@@ -35,4 +35,12 @@
       width: 0;
       height: 0;
     }
-    
+    &:focus {
+        outline: none;
+      }
+      &:hover:after {
+        animation: click 0.5s;
+      }
+    }
+  }
+  
