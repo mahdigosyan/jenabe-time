@@ -17,4 +17,15 @@ function Item({ item }) {
         const pausedItem = { ...item, status: "paused" };
         dispatch({ type: "UPDATE_ITEM", item: pausedItem });
       }
+
+      function resumeItem() {
+        const pendingItem = { ...item, status: "pending" };
+        dispatch({ type: "UPDATE_ITEM", item: pendingItem });
+      }
+    
+      function completeItem() {
+        const completedItem = { ...item, status: "completed" };
+        dispatch({ type: "UPDATE_ITEM", item: completedItem });
+      }
+
       
