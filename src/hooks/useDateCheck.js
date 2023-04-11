@@ -15,4 +15,19 @@ export default function useDateCheck() {
           let currentDate = parseISO(
             `${format(nd, "y")}-${format(nd, "MM")}-${format(nd, "dd")}`
           );
-          
+
+          if (isBefore(storedDate, currentDate)) {
+            if (remote.getGlobal("notificationSettings").resetNotification) {
+              new Notification("todometer reset time!", {
+                body: "It's a new day! Your todos are being reset."
+              });
+            }
+
+            dispatch({ type: "RESET_ALL" });
+        window.location.reload();
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [storedDate, dispatch]);
+}
+
