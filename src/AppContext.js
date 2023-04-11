@@ -75,4 +75,12 @@ const appStateReducer = (state, action) => {
             }
             return i;
           });
-          
+          const newState = { ...state, items: newItems, date: currentDate };
+      saveState(newState);
+      return newState;
+    }
+    default:
+      return state;
+  }
+};
+
