@@ -9,3 +9,23 @@ test("renders the day of the month", () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+
+test("renders the month", () => {
+    const { getByText } = render(<App />);
+    const linkElement = getByText(format(new Date(), "MMM"));
+    expect(linkElement).toBeInTheDocument();
+  });
+
+
+  test("renders the year", () => {
+    const { getByText } = render(<App />);
+    const linkElement = getByText(format(new Date(), "y"));
+    expect(linkElement).toBeInTheDocument();
+  });
+  
+  test("renders the weekday", () => {
+    const { getByText } = render(<App />);
+    const linkElement = getByText(format(new Date(), "EEEE"));
+    expect(linkElement).toBeInTheDocument();
+  });
+  
