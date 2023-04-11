@@ -44,4 +44,35 @@
       opacity: 0.9;
     }
   }
+
+  .panel {
+    animation: slidedown 0.2s ease;
+  }
+  
+  .reset {
+    text-align: center;
+    button {
+      background: transparent;
+      border: none;
+      color: $font-color;
+      cursor: pointer;
+      font-size: $item-font-size;
+      animation: slidedown 1s;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+
+  @keyframes slidedown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
