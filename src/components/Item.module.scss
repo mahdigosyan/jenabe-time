@@ -38,5 +38,16 @@
       border-radius: 3px;
     }
 
-    
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+
+  &.completedButtons {
+    justify-content: flex-end;
+  }
+  
+
+
   
