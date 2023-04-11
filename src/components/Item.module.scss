@@ -1,0 +1,22 @@
+@import "../styles/variables";
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 10px 0;
+  padding: 20px;
+  width: 100%;
+  min-height: 70px;
+  background: $item-color;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: $item-font-size;
+  @media (max-width: 600px) {
+    margin: 20px auto;
+  }
+  .itemName {
+    width: calc(100% - 110px);
+    overflow: auto;
+    
