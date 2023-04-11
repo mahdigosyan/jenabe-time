@@ -16,4 +16,19 @@ function Progress() {
   if (isNaN(completedPercentage)) {
     completedPercentage = 0;
   }
-  
+  if (isNaN(pausedPercentage)) {
+    pausedPercentage = 0;
+  }
+
+  return (
+    <div className={styles.progress}>
+      <div
+        className={`${styles.progressbar} ${styles.paused}`}
+        style={{ width: `${pausedPercentage * 100}%` }}
+      ></div>
+      <div
+        className={`${styles.progressbar} ${styles.completed}`}
+        style={{ width: `${completedPercentage * 100}%` }}
+      ></div>
+    </div>
+    
