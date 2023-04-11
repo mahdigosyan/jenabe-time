@@ -21,3 +21,27 @@ function getTimeCondition(nd) {
 
       return condition;
 }
+
+export default function useReminderNotification() {
+    const { pending, paused } = useItems();
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          let nd = new Date();
+
+          if (getTimeCondition(nd) && (pending.length > 0 || paused.length > 0)) {
+            let text = `Don't forget, you have ${pending.length +
+              paused.length} tasks to do today (${pending.length} incomplete, ${
+              paused.length
+            } paused for later)`;
+
+            new Notification("todometer reminder!", {
+                body: text
+              });
+            }
+          }, 1000);
+
+          return () => clearInterval(interval);
+  }, [pending.length, paused.length]);
+}
+
