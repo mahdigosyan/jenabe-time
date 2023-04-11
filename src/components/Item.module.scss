@@ -75,7 +75,38 @@
         }
       }
 
-      
+      &.complete {
+        width: 30px;
+        background: no-repeat url("../img/check.svg");
+        &:after {
+          background: $green;
+        }
+      }
+
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        width: 0;
+        height: 0;
+      }
+
+      &:focus {
+        outline: 1px solid $item-color;
+        &:after {
+          animation: click 0.5s;
+        }
+      }
+      &:hover:after {
+        animation: click 0.5s;
+      }
+    }
+  }
+}
 
 
 
