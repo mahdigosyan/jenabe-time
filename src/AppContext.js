@@ -84,3 +84,33 @@ const appStateReducer = (state, action) => {
   }
 };
 
+
+export function AppStateProvider({ children }) {
+    let initialState = loadState();
+  
+    if (initialState === undefined) {
+      let nd = new Date();
+  
+      initialState = {
+        items: [],
+        date: {
+          day: format(nd, "dd"),
+          dayDisplay: format(nd, "d"),
+          month: format(nd, "MM"),
+          monthDisplay: format(nd, "MMM"),
+          year: format(nd, "y"),
+          weekday: format(nd, "EEEE")
+        }
+      };
+    }
+  
+    saveState(initialState);
+  
+    const value = useReducer(appStateReducer, initialState);
+    return (
+      <div className="App">
+        <AppContext.Provider value={value}>{children}</AppContext.Provider>
+      </div>
+    );
+  }
+  
