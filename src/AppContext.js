@@ -9,3 +9,12 @@ export function useAppState() {
   return useContext(AppContext)[0];
 }
 
+
+export function useAppReducer() {
+    return useContext(AppContext)[1];
+  }
+  
+  export function useItems() {
+    const { items } = useAppState();
+
+    
