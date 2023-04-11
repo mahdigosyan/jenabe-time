@@ -20,3 +20,23 @@
     width: calc(100% - 110px);
     overflow: auto;
     
+    &::-webkit-scrollbar {
+        background-color: $item-color;
+        height: 0.75em;
+        @media (max-width: 600px) {
+          height: 0.25em;
+        }
+      }
+
+
+    &::-webkit-scrollbar-thumb:window-inactive,
+    &::-webkit-scrollbar-thumb {
+      background: $bg;
+      border: 3px solid $item-color;
+      border-left: none;
+      border-right: none;
+      border-radius: 3px;
+    }
+
+    
+  
