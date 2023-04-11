@@ -75,4 +75,18 @@
       transform: translateY(0);
     }
   }
+
+
+@keyframes blink {
+    0% {
+      text-shadow: 0 0 2px white;
+    }
+    50% {
+      text-shadow: 0 0 10px white;
+    }
+    100% {
+      text-shadow: 0 0 2px white;
+    }
+  }
+
   
