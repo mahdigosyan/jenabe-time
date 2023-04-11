@@ -9,4 +9,10 @@ export default function useDateCheck() {
     const dispatch = useAppReducer();
     const storedDate = parseISO(`${date.year}-${date.month}-${date.day}`);
 
-    
+    useEffect(() => {
+        const interval = setInterval(() => {
+          let nd = new Date();
+          let currentDate = parseISO(
+            `${format(nd, "y")}-${format(nd, "MM")}-${format(nd, "dd")}`
+          );
+          
