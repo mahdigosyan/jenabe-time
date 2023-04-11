@@ -17,4 +17,10 @@ export function useAppReducer() {
   export function useItems() {
     const { items } = useAppState();
 
-    
+    const pending = items.filter(item => item.status === "pending");
+  const paused = items.filter(item => item.status === "paused");
+  const completed = items.filter(item => item.status === "completed");
+
+  return { pending, paused, completed };
+}
+
