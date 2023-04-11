@@ -28,4 +28,34 @@ function Item({ item }) {
         dispatch({ type: "UPDATE_ITEM", item: completedItem });
       }
 
-      
+      return (
+        <div className={styles.item} tabIndex="0">
+          <div className={styles.itemName}>{text}</div>
+          <div
+            className={`${styles.buttons} ${completed ? styles.completedButtons : ""}`}
+          >
+            <button className={styles.delete} onClick={deleteItem} tabIndex="0"></button>
+            {!paused && !completed && (
+              <button className={styles.pause} onClick={pauseItem} tabIndex="0"></button>
+            )}
+            {paused && !completed && (
+              <button
+                className={styles.resume}
+                onClick={resumeItem}
+                tabIndex="0"
+              ></button>
+            )}
+            {!completed && (
+              <button
+                className={styles.complete}
+                onClick={completeItem}
+                tabIndex="0"
+              ></button>
+            )}
+          </div>
+        </div>
+      );
+    }
+    
+    export default Item;
+    
