@@ -47,7 +47,36 @@
   &.completedButtons {
     justify-content: flex-end;
   }
-  
+
+  button {
+    position: relative;
+    height: 24px;
+    border: none;
+    &.delete {
+      width: 24px;
+      background: no-repeat url("../img/x.svg");
+      &:after {
+        background: $red;
+      }
+    }
+
+    &.pause {
+        width: 24px;
+        background: no-repeat url("../img/pause.svg");
+        &:after {
+          background: $yellow;
+        }
+      }
+      &.resume {
+        width: 24px;
+        background: no-repeat url("../img/resume.svg");
+        &:after {
+          background: $yellow;
+        }
+      }
+
+      
+
 
 
   
