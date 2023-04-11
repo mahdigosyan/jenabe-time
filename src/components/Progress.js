@@ -31,4 +31,9 @@ function Progress() {
         style={{ width: `${completedPercentage * 100}%` }}
       ></div>
     </div>
-    
+
+);
+}
+
+export default Progress;
+
